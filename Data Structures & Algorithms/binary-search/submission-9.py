@@ -1,0 +1,11 @@
+import bisect
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        idx = bisect.bisect_left(nums, target)
+
+        # check if it actuall exists
+        if idx < len(nums) and nums[idx] == target: 
+            return idx 
+        else:
+            return -1
